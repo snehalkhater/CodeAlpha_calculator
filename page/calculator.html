@@ -6,77 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculator</title>
 </head>
-<style rel="stylesheet" href="./../css/calculator.css"></style>
+<link rel="stylesheet" href="./../css/calculator.css" />
+
 <body>
-    <h1>calculator</h1>
-    <div class="calculator">
-        <div id="display" class="display">0</div>
-        <div class="buttons">
-            <button class="btn clear" onclick="clearDisplay()">C</button>
-            <button class="btn" onclick="deleteLast()">⌫</button>
-            <button class="btn operator" onclick="append('/')">÷</button>
-            <button class="btn operator" onclick="append('*')">×</button>
 
-            <button class="btn" onclick="append('7')">7</button>
-            <button class="btn" onclick="append('8')">8</button>
-            <button class="btn" onclick="append('9')">9</button>
-            <button class="btn operator" onclick="append('-')">−</button>
+    <body>
+        <div class="container">
+            <h1 class="heading">Calculator</h1>
+            <div class="calculator">
+                <div id="display" class="display">0</div>
+                <div class="buttons">
+                    <button class="btn clear" onclick="clearDisplay()">C</button>
+                    <button class="btn" onclick="deleteLast()">⌫</button>
+                    <button class="btn operator" onclick="append('/')">÷</button>
+                    <button class="btn operator" onclick="append('*')">×</button>
 
-            <button class="btn" onclick="append('4')">4</button>
-            <button class="btn" onclick="append('5')">5</button>
-            <button class="btn" onclick="append('6')">6</button>
-            <button class="btn operator" onclick="append('+')">+</button>
+                    <button class="btn" onclick="append('7')">7</button>
+                    <button class="btn" onclick="append('8')">8</button>
+                    <button class="btn" onclick="append('9')">9</button>
+                    <button class="btn operator" onclick="append('-')">−</button>
 
-            <button class="btn" onclick="append('1')">1</button>
-            <button class="btn" onclick="append('2')">2</button>
-            <button class="btn" onclick="append('3')">3</button>
-            <button class="btn equal" onclick="calculate()">=</button>
+                    <button class="btn" onclick="append('4')">4</button>
+                    <button class="btn" onclick="append('5')">5</button>
+                    <button class="btn" onclick="append('6')">6</button>
+                    <button class="btn operator" onclick="append('+')">+</button>
 
-            <button class="btn" onclick="append('0')">0</button>
-            <button class="btn" onclick="appendgit ('.')">.</button>
-        </div>
-    </div>
-    <script>
-        const display = document.getElementById("display");
+                    <button class="btn" onclick="append('1')">1</button>
+                    <button class="btn" onclick="append('2')">2</button>
+                    <button class="btn" onclick="append('3')">3</button>
+                    <button class="btn equal" onclick="calculate()">=</button>
 
-        function append(value) {
-            if (display.innerText === "0" && value !== ".") {
-                display.innerText = value;
-            } else {
-                display.innerText += value;
-            }
-        }
-        function clearDisplay() {
-            display.innerText = "0";
-        }
+                    <button class="btn" onclick="append('0')">0</button>
+                    <button class="btn" onclick="appendgit ('.')">.</button>
+                </div>
+            </div>
+            <script>
+                const display = document.getElementById("display");
 
-        function deleteLast() {
-            if (display.innerText.length === 1 || display.innerText === "Error") {
-                display.innerText = "0";
-            } else {
-                display.innerText = display.innerText.slice(0, -1);
-            }
-        }
-        function calculate() {
-            try {
-                display.innerText = eval(display.innerText.replace("÷", "/").replace("×", "*"));
-            } catch {
-                display.innerText = "Error";
-            }
-        }
-        document.addEventListener("keydown", function (e) {
-            const key = e.key;
-            if (!isNaN(key) || "+-*/.".includes(key)) {
-                append(key);
-            } else if (key === "Enter") {
-                e.preventDefault();
-                calculate();
-            } else if (key === "Backspace") {
-                deleteLast();
-            } else if (key === "Escape") {
-                clearDisplay();
-            }
-        });
-    </script>
-</body>
+                function append(value) {
+                    if (display.innerText === "0" && value !== ".") {
+                        display.innerText = value;
+                    } else {
+                        display.innerText += value;
+                    }
+                }
+                function clearDisplay() {
+                    display.innerText = "0";
+                }
+
+                function deleteLast() {
+                    if (display.innerText.length === 1 || display.innerText === "Error") {
+                        display.innerText = "0";
+                    } else {
+                        display.innerText = display.innerText.slice(0, -1);
+                    }
+                }
+                function calculate() {
+                    try {
+                        display.innerText = eval(display.innerText.replace("÷", "/").replace("×", "*"));
+                    } catch {
+                        display.innerText = "Error";
+                    }
+                }
+                document.addEventListener("keydown", function (e) {
+                    const key = e.key;
+                    if (!isNaN(key) || "+-*/.".includes(key)) {
+                        append(key);
+                    } else if (key === "Enter") {
+                        e.preventDefault();
+                        calculate();
+                    } else if (key === "Backspace") {
+                        deleteLast();
+                    } else if (key === "Escape") {
+                        clearDisplay();
+                    }
+                });
+            </script>
+    </body>
+
 </html>
