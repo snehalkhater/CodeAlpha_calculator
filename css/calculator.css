@@ -1,24 +1,25 @@
 body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #1c1e26, #2e2f38);
+  font-family: 'Segoe UI', sans-serif;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, #0a0a0a, #3a4452);
-  margin: 0;
-  font-family: Arial, sans-serif;
 }
 
-.calculator {
-  padding: 15px;
-  box-shadow: 0 0 15px #000;
-  border: 2px solid rgb(166, 114, 114);
-  border-radius: 15px;
-}
-.calculator-title {
+.calculator-wrapper {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+}
+
+.calculator-title {
+  text-align: center;
   color: white;
-  margin-bottom: 20px;
   font-size: 28px;
+  margin-bottom: 20px;
 }
 
 
