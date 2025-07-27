@@ -1,91 +1,68 @@
-* {
-    padding: 0%;
-    margin: 0%;
-}
-
 body {
-    background: #222;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #0a0a0a, #3a4452);
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 .calculator {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
-    width: 300px;
+  padding: 15px;
+  box-shadow: 0 0 15px #000;
+  border: 2px solid rgb(166, 114, 114);
+  border-radius: 15px;
 }
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+.calculator-title {
+  align-items: center;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 28px;
 }
 
 
-.heading {
-    text-align: center;
-    color: white;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+.display input {
+  width: 360px;
+  border: none;
+  outline: none;
+  padding: 20px;
+  margin: 10px;
+  background: transparent;
+  color: #fff;
+  font-size: 40px;
+  text-align: right;
+  cursor: pointer;
 }
 
-
-.display {
-    background: #111;
-    color: #0f0;
-    font-size: 2em;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: right;
-    margin-bottom: 20px;
-    overflow-x: auto;
+input::placeholder {
+  color: #fff;
 }
 
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+.row {
+  display: flex;
+  justify-content: center;
 }
 
-.btn {
-    background-color: #444;
-    padding: 20px;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.2s;
+button {
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  background: transparent;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  border: none;
+  border-radius: 17%;
+  box-shadow: -10px -10px 15px #000;
+  outline: 1px solid #131313;
+  cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #555;
+button#eqBtn {
+  background-color: red;
 }
 
-.btn.operator {
-    background-color: #ff9500;
-    color: #000;
-}
-
-.btn.equal {
-    background-color: #0f0;
-    color: #000;
-}
-
-.btn.clear {
-    background-color: #e00;
-    color: #fff;
-}
-
-@media (max-width: 400px) {
-    .calculator {
-        width: 90%;
-    }
+button.opr {
+  color: yellow;
 }
